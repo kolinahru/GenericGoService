@@ -10,7 +10,7 @@ A production-style backend service in Go demonstrating:
 
 ---
 
-# 🧭 Architecture Overview
+# Architecture Overview
 Client  
 ↓  
 HTTP Handler  
@@ -25,7 +25,7 @@ Service also interacts with:
 
 ---
 
-# 🚀 Features
+# Features
 
 - Full CRUD API
 - PostgreSQL as source of truth
@@ -40,36 +40,35 @@ Service also interacts with:
 
 ---
 
-# 📁 Project Structure
-go-day3/
-main.go
-db.go
-
-models/
-item.go
-
-repository/
-item_repository.go
-
-service/
-item_service.go
-
-handlers/
-item_handler.go
-response.go
-
-jobs/
-job.go
-queue.go
-worker_pool.go
-
-seed.sql
-docker-compose.yml
-
+# Project Structure
+go-day3/  
+main.go  
+db.go  
+  
+models/  
+item.go  
+  
+repository/  
+item_repository.go  
+  
+service/  
+item_service.go  
+  
+handlers/  
+item_handler.go  
+response.go  
+  
+jobs/  
+job.go  
+queue.go  
+worker_pool.go  
+  
+seed.sql  
+docker-compose.yml  
 
 ---
 
-# ⚙️ Configuration (Environment Variables)
+# Configuration (Environment Variables)
 
 Create a `.env` file (optional):
 DB_HOST=localhost
@@ -82,7 +81,7 @@ REDIS_ADDR=localhost:6379
 PORT=8080
 ---
 
-# 🐳 Docker Compose (Recommended)
+# Docker Compose (Recommended)
 
 ## `docker-compose.yml`
 version: '3.9'
@@ -108,79 +107,56 @@ ports:
 
 volumes:
 pgdata:
----
-
-## Start services
-docker-compose up -d
 
 ---
 
-# 🗄️ Database Setup
+## Start services: docker-compose up -d
+
+---
+
+# Database Setup
 
 ## Create table
-CREATE TABLE IF NOT EXISTS items (
-id SERIAL PRIMARY KEY,
-name TEXT NOT NULL
-);
+CREATE TABLE IF NOT EXISTS items (  
+id SERIAL PRIMARY KEY,  
+name TEXT NOT NULL  
+);  
 
 ---
 
-# 🌱 Seed Data
+# Seed Data
 
-## `seed.sql`
-INSERT INTO items (name) VALUES
-('Keyboard'),
-('Mouse'),
-('Monitor'),
-('Laptop'),
-('Desk'),
-('Chair'),
-('Webcam'),
-('Microphone');
+## `seed.sql`  
+INSERT INTO items (name) VALUES  
+('Keyboard'),  
+('Mouse'),  
+('Monitor'),  
+('Laptop'),  
+('Desk'),  
+('Chair'),  
+('Webcam'),  
+('Microphone');  
 
 ---
 
 ## Run seed
-psql -h localhost -U postgres -d goapp -f seed.sql
+psql -h localhost -U postgres -d goapp -f seed.sql  
 
-Password: postgres
-
-
----
-
-# ▶️ Running the App: go run .
-
-Server:
-
-
-http://localhost:8080
-
+Password: postgres  
 
 ---
 
-# 📡 API Endpoints
+# Running the App: go run .
 
-## GET all
-
-
-GET /items
-
+Server: http://localhost:8080
 
 ---
 
-## GET by ID
+# API Endpoints
 
-
-GET /items/{id}
-
-
----
-
-## POST
-
-
-POST /items
-
+## GET all: GET /items
+## GET by ID: GET /items/{id}
+## POST: POST /items
 
 ```json
 {
@@ -193,7 +169,8 @@ PUT /items/{id}
 }
 DELETE
 DELETE /items/{id}
-🧪 Testing (PowerShell)
+
+Testing (PowerShell)
 Create
 Invoke-RestMethod `
   -Uri http://localhost:8080/items `
