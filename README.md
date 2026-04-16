@@ -11,14 +11,14 @@ A production-style backend service in Go demonstrating:
 ---
 
 # 🧭 Architecture Overview
-Client
-↓
-HTTP Handler
-↓
-Service Layer (business logic, caching, jobs)
-↓
-Repository (PostgreSQL)
-
+Client  
+↓  
+HTTP Handler  
+↓  
+Service Layer (business logic, caching, jobs)  
+↓  
+Repository (PostgreSQL)  
+  
 Service also interacts with:
 → Redis (cache)
 → Worker Pool (async jobs)
