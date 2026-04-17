@@ -70,34 +70,35 @@ seed.sql
 # Database Setup
 
 ## Create table
-`CREATE TABLE IF NOT EXISTS items (  `
-`id SERIAL PRIMARY KEY, ` 
-`name TEXT NOT NULL); ` 
+`CREATE TABLE IF NOT EXISTS items (` 
+`id SERIAL PRIMARY KEY,`  
+`name TEXT NOT NULL);`
 
 ---
 
 # Seed Data
 
 ## `seed.sql`  
-`INSERT INTO items (name) VALUES  `
-`('Keyboard'),  `
-`('Mouse'),  `
-`('Monitor'),  `
-`('Laptop'),  `
-`('Desk'),  `
-`('Chair'),  `
-`('Webcam'),  `
-`('Microphone'); ` 
+`INSERT INTO items (name) VALUES` 
+`('Keyboard'),` 
+`('Mouse'),` 
+`('Monitor'),` 
+`('Laptop'),` 
+`('Desk'),` 
+`('Chair'),` 
+`('Webcam'),` 
+`('Microphone');`  
 
 ---
 
 ## Run seed
-`psql -h localhost -U postgres -d goapp -f seed.sql  `
+`psql -h localhost -U postgres -d goapp -f seed.sql` 
 Password: postgres  
 
 ---
 
-# Running the App: `go run .`
+# Running the App: 
+`go run .`
 
 Server: http://localhost:8080
 
@@ -106,38 +107,38 @@ Server: http://localhost:8080
 # API Endpoints
 
 ## GET all: 
-`GET /items`
+`GET /items` 
 ## GET by ID: 
-`GET /items/{id}`
+`GET /items/{id}` 
 ## POST: 
-`POST /items`
-`{`
- ` "name": "New Item"`
-`}`
-##PUT: 
-`PUT /items/{id}`
-`{`
-  `"name": "Updated Item"`
-`}`
-##DELETE:
-`DELETE /items/{id}`
+`POST /items` 
+`{` 
+ ` "name": "New Item"` 
+`}` 
+## PUT: 
+`PUT /items/{id}` 
+`{` 
+  `"name": "Updated Item"` 
+`}` 
+## DELETE:
+`DELETE /items/{id}` 
 
-#Testing (PowerShell)
-##Create
-`Invoke-RestMethod `
-  `-Uri http://localhost:8080/items `
-  `-Method POST `
-  `-Body '{"name":"Test Item"}' `
-  `-ContentType "application/json"
-##Get
-`Invoke-RestMethod http://localhost:8080/items`
-##Update
-`Invoke-RestMethod `
-  `-Uri http://localhost:8080/items/1 `
-  `-Method PUT `
-  `-Body '{"name":"Updated"}' `
-  `-ContentType "application/json"
-##Delete
-`Invoke-RestMethod `
-  `-Uri http://localhost:8080/items/1 `
-  `-Method DELETE
+# Testing (PowerShell)
+## Create
+`Invoke-RestMethod` 
+  `-Uri http://localhost:8080/items` 
+  `-Method POST` 
+  `-Body '{"name":"Test Item"}'` 
+  `-ContentType "application/json"` 
+## Get
+`Invoke-RestMethod http://localhost:8080/items` 
+## Update
+`Invoke-RestMethod` 
+  `-Uri http://localhost:8080/items/1` 
+  `-Method PUT` 
+  `-Body '{"name":"Updated"}'` 
+  `-ContentType "application/json"` 
+##D elete
+`Invoke-RestMethod` 
+  `-Uri http://localhost:8080/items/1` 
+  `-Method DELETE` 
