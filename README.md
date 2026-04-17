@@ -70,9 +70,9 @@ seed.sql
 # Database Setup
 
 ## Create table
-`CREATE TABLE IF NOT EXISTS items (` 
-`id SERIAL PRIMARY KEY,`  
-`name TEXT NOT NULL);`
+`CREATE TABLE IF NOT EXISTS items (`  
+`id SERIAL PRIMARY KEY,`   
+`name TEXT NOT NULL);` 
 
 ---
 
@@ -92,13 +92,13 @@ seed.sql
 ---
 
 ## Run seed
-`psql -h localhost -U postgres -d goapp -f seed.sql` 
+`psql -h localhost -U postgres -d goapp -f seed.sql`  
 Password: postgres  
 
 ---
 
 # Running the App: 
-`go run .`
+`go run .`  
 
 Server: http://localhost:8080
 
@@ -108,37 +108,44 @@ Server: http://localhost:8080
 
 ## GET all: 
 `GET /items` 
+
 ## GET by ID: 
 `GET /items/{id}` 
+
 ## POST: 
-`POST /items` 
-`{` 
- ` "name": "New Item"` 
-`}` 
+`POST /items`  
+`{`  
+ ` "name": "New Item"`  
+`}`  
+
 ## PUT: 
-`PUT /items/{id}` 
-`{` 
-  `"name": "Updated Item"` 
-`}` 
+`PUT /items/{id}`  
+`{`  
+  `"name": "Updated Item"`  
+`}`  
+
 ## DELETE:
-`DELETE /items/{id}` 
+`DELETE /items/{id}`  
 
 # Testing (PowerShell)
 ## Create
-`Invoke-RestMethod` 
-  `-Uri http://localhost:8080/items` 
-  `-Method POST` 
-  `-Body '{"name":"Test Item"}'` 
-  `-ContentType "application/json"` 
+`Invoke-RestMethod`  
+  `-Uri http://localhost:8080/items`  
+  `-Method POST`  
+  `-Body '{"name":"Test Item"}'`  
+  `-ContentType "application/json"`  
+  
 ## Get
-`Invoke-RestMethod http://localhost:8080/items` 
+`Invoke-RestMethod http://localhost:8080/items`  
+
 ## Update
-`Invoke-RestMethod` 
-  `-Uri http://localhost:8080/items/1` 
-  `-Method PUT` 
-  `-Body '{"name":"Updated"}'` 
-  `-ContentType "application/json"` 
-##D elete
-`Invoke-RestMethod` 
-  `-Uri http://localhost:8080/items/1` 
-  `-Method DELETE` 
+`Invoke-RestMethod`  
+  `-Uri http://localhost:8080/items/1`  
+  `-Method PUT`  
+  `-Body '{"name":"Updated"}'`  
+  `-ContentType "application/json"`  
+  
+## Delete
+`Invoke-RestMethod`  
+  `-Uri http://localhost:8080/items/1`  
+  `-Method DELETE`  
