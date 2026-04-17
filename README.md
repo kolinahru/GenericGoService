@@ -79,15 +79,15 @@ seed.sql
 # Seed Data
 
 ## `seed.sql`  
-`INSERT INTO items (name) VALUES` 
-`('Keyboard'),` 
-`('Mouse'),` 
-`('Monitor'),` 
-`('Laptop'),` 
-`('Desk'),` 
-`('Chair'),` 
-`('Webcam'),` 
-`('Microphone');`  
+`INSERT INTO items (name) VALUES`  
+`('Keyboard'),`  
+`('Mouse'),`  
+`('Monitor'),`  
+`('Laptop'),`  
+`('Desk'),`  
+`('Chair'),`  
+`('Webcam'),`  
+`('Microphone');`   
 
 ---
 
