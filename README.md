@@ -41,27 +41,27 @@ Service also interacts with:
 ---
 
 # Project Structure
-go-day3/  
+GenericGoService/  
 main.go  
 db.go  
   
 models/  
-item.go  
+  item.go  
   
 repository/  
-item_repository.go  
+  item_repository.go  
   
 service/  
-item_service.go  
+  item_service.go  
   
 handlers/  
-item_handler.go  
-response.go  
+  item_handler.go  
+  response.go  
   
 jobs/  
-job.go  
-queue.go  
-worker_pool.go  
+  job.go  
+  queue.go  
+  worker_pool.go  
   
 seed.sql  
 docker-compose.yml  
@@ -71,14 +71,15 @@ docker-compose.yml
 # Configuration (Environment Variables)
 
 Create a `.env` file (optional):
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_NAME=goapp
+`DB_HOST=localhost`
+`DB_PORT=5432`
+`DB_USER=postgres`
+`DB_PASSWORD=postgres`
+`DB_NAME=goapp`
 
-REDIS_ADDR=localhost:6379
-PORT=8080
+REDIS_ADDR
+`localhost:6379`
+
 ---
 
 # Docker Compose (Recommended)
